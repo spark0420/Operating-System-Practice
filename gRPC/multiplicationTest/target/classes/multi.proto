@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_package = "org.example.grpc";
+
+// The greeting service definition.
+service multiply {
+  // Sends a greeting
+  rpc sayHello (HelloRequest) returns (HelloReply) {}
+
+  rpc askMulti (NumRequest) returns (NumReply) {}
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+  string message = 1;
+}
+
+message NumRequest {
+  int32 num1 = 1;
+  int32 num2 = 2;
+}
+
+message NumReply {
+  string answer = 1;
+}
